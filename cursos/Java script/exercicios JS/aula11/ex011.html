@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    País de origem: <input type="text" id="pais1">
+
+    <input type="button" value="Verificar" onclick="clicar()">
+    <div id = 'msg' ></div>
+
+    <script>
+       
+        function clicar(){
+            var paisN = document.querySelector('input#pais1')//País inputado
+            var msg = document.querySelector('div#msg')
+
+
+            msg.innerHTML = `Seu País é o (a) ${paisN.value.toUpperCase()}<br>`
+
+            if(paisN.value.toUpperCase() == 'BRASIL'){//}Condição composta if - else 
+                msg.innerText += `Você é Brasileiro!`
+            }
+            else{
+                msg.innerText += `Você é Estrangeiro!`
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>

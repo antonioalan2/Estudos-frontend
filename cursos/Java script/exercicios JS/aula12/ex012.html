@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação Federal</title>
+</head>
+<body>
+    <h1>IDADE PARA PARTICIPAR DAS ELEIÇÕES</h1>
+    Minha idade: <input type="number" name="idade0" id="idade0"><!--input de dados 'idade'-->
+    <input type="button" value="Verificar" onclick="check()">
+    <div id = 'def'></div> 
+    <script>
+        function check(){
+            var idadeR = document.querySelector('input#idade0')//idadeR é a variavel input dentro do script!
+            var def = document.querySelector('div#def')
+            var idadeN = Number(idadeR.value)
+
+            def.innerHTML = `Você tem ${idadeN} anos.<br>`
+
+            if(idadeN < 16 ){
+                def.innerHTML += `Não vota!`   
+            } else if(idadeN < 18 || idadeN > 65){
+                def.innerHTML += `Voto opicional!`
+            }else{
+                def.innerHTML += `Voto Obrigatorio!`
+            }
+        }
+    </script>
+    
+</body>
+</html>
